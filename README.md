@@ -1,4 +1,4 @@
-Mythical-Mobs
+Color Blocks
 =============
 
-Mythical Mobs
+Color Blocks mod by KeeperofMee
