@@ -37,7 +37,7 @@ public class ColorBlocks {
         @Instance("ColorBlocks")
         public static ColorBlocks instance;
        
-        //Color Blocks  in V.1.0      
+        //Color Blocks     
         public static Block CbBlack;
         public static Block CbMultiColor;
         public static Block CbBlue;
@@ -59,7 +59,6 @@ public class ColorBlocks {
         public static Block CbWhite;
         public static Block CbWineRed;
         public static Block CbYellow;
-        //Color Blocks in V.1.1
         public static Block CbRedOrange;
         public static Block CbLightOrange;
         public static Block CbWhitePink;
@@ -92,139 +91,133 @@ public class ColorBlocks {
     		}
     		
     	};
-    	
-    	
-    	
+
         @SidedProxy(clientSide="colorblocks.client.ClientProxy", serverSide="colorblocks.CommonProxy")
         public static CommonProxy proxy;
  
         @EventHandler // used in 1.6.2
         public void preInit(FMLPreInitializationEvent event) {   
         	
-        	//Blocks
-        	CbBlack = new CbColorBlock().setBlockName("CbBlack").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Black");
-    		GameRegistry.registerBlock(CbBlack, "CbBlack");
-    		CbMultiColor = new CbColorBlock().setBlockName("CbMultiColor").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "MultiColor");
-    		GameRegistry.registerBlock(CbMultiColor, "CbMultiColor");
-    		CbBlue = new CbColorBlock().setBlockName("CbBlue").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Blue");
-    		GameRegistry.registerBlock(CbBlue, "CbBlue");
-    		CbBrown = new CbColorBlock().setBlockName("CbBrown").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Brown");
-    		GameRegistry.registerBlock(CbBrown, "CbBrown");
-    		CbCyan = new CbColorBlock().setBlockName("CbCyan").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Cyan");
-    		GameRegistry.registerBlock(CbCyan, "CbCyan");
-    		CbDarkGreen = new CbColorBlock().setBlockName("CbDarkGreen").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkGreen");
-    		GameRegistry.registerBlock(CbDarkGreen, "CbDarkGreen"); 		
-    		CbGreen = new CbColorBlock().setBlockName("CbGreen").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Green");
-    		GameRegistry.registerBlock(CbGreen, "CbGreen");
-    		CbGrey = new CbColorBlock().setBlockName("CbGrey").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Grey");
-    		GameRegistry.registerBlock(CbGrey, "CbGrey");
-    		CbLightBlue = new CbColorBlock().setBlockName("CbLightBlue").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightBlue");
-    		GameRegistry.registerBlock(CbLightBlue, "CbLightBlue");
-    		CbLightBrown = new CbColorBlock().setBlockName("CbLightBrown").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightBrown");
-    		GameRegistry.registerBlock(CbLightBrown, "CbLightBrown");
-    		CbLightGrey = new CbColorBlock().setBlockName("CbLightGrey").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightGrey");
-    		GameRegistry.registerBlock(CbLightGrey, "CbLightGrey");
+        	//Defines Blocks in Minecraft
+        	CbBlack = new CbColorBlock("Black");
+    		CbMultiColor = new CbColorBlock("MultiColor");
+    		CbBlue = new CbColorBlock("Blue");
+    		CbBrown = new CbColorBlock("Brown");
+    		CbCyan = new CbColorBlock("Cyan");
+    		CbDarkGreen = new CbColorBlock("DarkGreen");
+    		CbGreen = new CbColorBlock("Green");
+    		CbGrey = new CbColorBlock("Grey");
+    		CbLightBlue = new CbColorBlock("LightBlue");
+    		CbLightBrown = new CbColorBlock("LightBrown");
+    		CbLightGrey = new CbColorBlock("LightGrey");
+			CbLightPurple = new CbColorBlock("LightPurple");
+    		CbLimeGreen = new CbColorBlock("LimeGreen");
+    		CbMagenta = new CbColorBlock("Magenta");
+    		CbOrange = new CbColorBlock("Orange");
+    		CbPink = new CbColorBlock("Pink");
+    		CbPurple = new CbColorBlock("Purple");
+    		CbRed = new CbColorBlock("Red");
+    		CbWhite = new CbColorBlock("White");
+    		CbWineRed = new CbColorBlock("WineRed");
+    		CbYellow = new CbColorBlock("Yellow");
+    		CbRedOrange = new CbColorBlock("RedOrange");
+    		CbLightOrange = new CbColorBlock("LightOrange");
+    		CbWhitePink = new CbColorBlock("WhitePink");
+    		CbSharpPink = new CbColorBlock("SharpPink");
+    		CbLightPurpleBlue = new CbColorBlock("LightPurpleBlue");
+    		CbPurpleBlue = new CbColorBlock("PurpleBlue");
+    		CbBlueishWhite = new CbColorBlock("BlueishWhite");
+    		CbLightCyan = new CbColorBlock("LightCyan");
+    		CbGreenishCyan = new CbColorBlock("GreenishCyan");
+    		CbYellowishGreen = new CbColorBlock("YellowishGreen");
+    		CbLightYellow = new CbColorBlock("LightYellow");
+    		CbLightOrangeRed = new CbColorBlock("LightOrangeRed");
+    		CbWhitePurple = new CbColorBlock("WhitePurple");
+    		CbDarkYellow = new CbColorBlock("DarkYellow");
+    		CbDarkCyan = new CbColorBlock("DarkCyan");
+    		CbDarkPurple = new CbColorBlock("DarkPurple");
+    		CbDarkBlueishCyan = new CbColorBlock("DarkBlueishCyan");
+    		CbDarkBrownishRed = new CbColorBlock("DarkBrownishRed");
+    		CbDarkCyanishGreen = new CbColorBlock("DarkCyanishGreen");
+    		CbDarkBlue = new CbColorBlock("DarkBlue");
+    		CbDarkGrey = new CbColorBlock("DarkGrey");
+
+    		//Defines items in minecraft
+    		CbWhiteDust = new CbColorItem().setUnlocalizedName("WhiteDust").setCreativeTab(colorblockTab).setTextureName(modid + ":" + "WhiteDust");
+    		CbWhiteIngot = new CbColorItem().setUnlocalizedName("WhiteIngot").setCreativeTab(colorblockTab).setTextureName(modid + ":" + "WhiteIngot");
+
+        	//Registers the blocks in minecraft
+    		GameRegistry.registerBlock(CbBlack, "Black");
+    		GameRegistry.registerBlock(CbMultiColor, "MultiColor");
+    		GameRegistry.registerBlock(CbBlue, "Blue");
+    		GameRegistry.registerBlock(CbBrown, "Brown");
+    		GameRegistry.registerBlock(CbCyan, "Cyan");
+    		GameRegistry.registerBlock(CbDarkGreen, "DarkGreen"); 		
+    		GameRegistry.registerBlock(CbGreen, "Green");
+    		GameRegistry.registerBlock(CbGrey, "Grey");
+    		GameRegistry.registerBlock(CbLightBlue, "LightBlue");
+    		GameRegistry.registerBlock(CbLightBrown, "LightBrown");
+    		GameRegistry.registerBlock(CbLightGrey, "LightGrey");
+    		GameRegistry.registerBlock(CbLightPurple, "LightPurple");
+    		GameRegistry.registerBlock(CbLimeGreen, "LimeGreen");
+    		GameRegistry.registerBlock(CbMagenta, "Magenta");
+    		GameRegistry.registerBlock(CbOrange, "Orange");
+    		GameRegistry.registerBlock(CbPink, "Pink");
+    		GameRegistry.registerBlock(CbPurple, "Purple");
+    		GameRegistry.registerBlock(CbRed, "Red");
+    		GameRegistry.registerBlock(CbWhite, "White");
+    		GameRegistry.registerBlock(CbWineRed, "WineRed");
+    		GameRegistry.registerBlock(CbYellow, "Yellow");
+    		GameRegistry.registerBlock(CbRedOrange, "RedOrange");
+    		GameRegistry.registerBlock(CbLightOrange, "LightOrange");
+    		GameRegistry.registerBlock(CbWhitePink, "WhitePink");
+    		GameRegistry.registerBlock(CbSharpPink, "SharpPink");
+    		GameRegistry.registerBlock(CbLightPurpleBlue, "LightPurpleBlue");
+    		GameRegistry.registerBlock(CbPurpleBlue, "PurpleBlue");
+    		GameRegistry.registerBlock(CbBlueishWhite, "BlueishWhite");
+    		GameRegistry.registerBlock(CbLightCyan, "LightCyan");
+    		GameRegistry.registerBlock(CbGreenishCyan, "GreenishCyan");
+    		GameRegistry.registerBlock(CbYellowishGreen, "YellowishGreen");
+    		GameRegistry.registerBlock(CbLightYellow, "LightYellow");
+    		GameRegistry.registerBlock(CbLightOrangeRed, "LightOrangeRed");
+    		GameRegistry.registerBlock(CbWhitePurple, "WhitePurple");
+    		GameRegistry.registerBlock(CbDarkYellow, "DarkYellow");
+    		GameRegistry.registerBlock(CbDarkCyan, "DarkCyan");
+    		GameRegistry.registerBlock(CbDarkPurple, "DarkPurple");
+    		GameRegistry.registerBlock(CbDarkBlueishCyan, "DarkBlueishCyan");
+    		GameRegistry.registerBlock(CbDarkBrownishRed, "DarkBrownishRed");
+    		GameRegistry.registerBlock(CbDarkCyanishGreen, "DarkCyanishGreen"); 
+    		GameRegistry.registerBlock(CbDarkBlue, "DarkBlue"); 
+    		GameRegistry.registerBlock(CbDarkGrey, "DarkGrey"); 
+        		
+        		//Registers items in Minecraft
+    		GameRegistry.registerItem(CbWhiteDust, "WhiteDust"); 
+    		GameRegistry.registerItem(CbWhiteIngot, "WhiteIngot"); 
+    			
+    		//Smelting Recipes
+    			GameRegistry.addSmelting(CbWhiteDust, new ItemStack(CbWhiteIngot, 2), 0.1F);
+
     		
-			CbLightPurple = new CbColorBlock().setBlockName("CbLightPurple").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightPurple");
-    		GameRegistry.registerBlock(CbLightPurple, "CbLightPurple");
-    		CbLimeGreen = new CbColorBlock().setBlockName("CbLimeGreen").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LimeGreen");
-    		GameRegistry.registerBlock(CbLimeGreen, "CbLimeGreen");
-    		CbMagenta = new CbColorBlock().setBlockName("CbMagenta").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Magenta");
-    		GameRegistry.registerBlock(CbMagenta, "CbMagenta");
-    		CbOrange = new CbColorBlock().setBlockName("CbOrange").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Orange");
-    		GameRegistry.registerBlock(CbOrange, "CbOrange");
-    		CbPink = new CbColorBlock().setBlockName("CbPink").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Pink");
-    		GameRegistry.registerBlock(CbPink, "CbPink");
-    		CbPurple = new CbColorBlock().setBlockName("CbPurple").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Purple");
-    		GameRegistry.registerBlock(CbPurple, "CbPurple");
-    		CbRed = new CbColorBlock().setBlockName("CbRed").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Red");
-    		GameRegistry.registerBlock(CbRed, "CbRed");
-    		CbWhite = new CbColorBlock().setBlockName("CbWhite").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "White");
-    		GameRegistry.registerBlock(CbWhite, "CbWhite");
-    		CbWineRed = new CbColorBlock().setBlockName("CbWineRed").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "WineRed");
-    		GameRegistry.registerBlock(CbWineRed, "CbWineRed");
-    		CbYellow = new CbColorBlock().setBlockName("CbYellow").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "Yellow");
-    		GameRegistry.registerBlock(CbYellow, "CbYellow");
-    		CbRedOrange = new CbColorBlock().setBlockName("CbRedOrange").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "RedOrange");
-    		GameRegistry.registerBlock(CbRedOrange, "CbRedOrange");
-    		CbLightOrange = new CbColorBlock().setBlockName("CbLightOrange").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightOrange");
-    		GameRegistry.registerBlock(CbLightOrange, "CbLightOrange");
-    		CbWhitePink = new CbColorBlock().setBlockName("CbWhitePink").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "WhitePink");
-    		GameRegistry.registerBlock(CbWhitePink, "CbWhitePink");
-    		CbSharpPink = new CbColorBlock().setBlockName("CbSharpPink").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "SharpPink");
-    		GameRegistry.registerBlock(CbSharpPink, "CbSharpPink");
-    		CbLightPurpleBlue = new CbColorBlock().setBlockName("CbLightPurpleBlue").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightPurpleBlue");
-    		GameRegistry.registerBlock(CbLightPurpleBlue, "CbLightPurpleBlue");
-    		CbPurpleBlue = new CbColorBlock().setBlockName("CbPurpleBlue").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "PurpleBlue");
-    		GameRegistry.registerBlock(CbPurpleBlue, "CbPurpleBlue");
-    		CbBlueishWhite = new CbColorBlock().setBlockName("CbBlueishWhite").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "BlueishWhite");
-    		GameRegistry.registerBlock(CbBlueishWhite, "CbBlueishWhite");
-    		CbLightCyan = new CbColorBlock().setBlockName("CbLightCyan").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightCyan");
-    		GameRegistry.registerBlock(CbLightCyan, "CbLightCyan");
-    		CbGreenishCyan = new CbColorBlock().setBlockName("CbGreenishCyan").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "GreenishCyan");
-    		GameRegistry.registerBlock(CbGreenishCyan, "CbGreenishCyan");
-    		CbYellowishGreen = new CbColorBlock().setBlockName("CbYellowishGreen").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "YellowishGreen");
-    		GameRegistry.registerBlock(CbYellowishGreen, "CbYellowishGreen");
-    		CbLightYellow = new CbColorBlock().setBlockName("CbLightYellow").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightYellow");
-    		GameRegistry.registerBlock(CbLightYellow, "CbLightYellow");
-    		CbLightOrangeRed = new CbColorBlock().setBlockName("CbLightOrangeRed").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "LightOrangeRed");
-    		GameRegistry.registerBlock(CbLightOrangeRed, "CbLightOrangeRed");
-    		CbWhitePurple = new CbColorBlock().setBlockName("CbWhitePurple").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "WhitePurple");
-    		GameRegistry.registerBlock(CbWhitePurple, "CbWhitePurple");
-    		CbDarkYellow = new CbColorBlock().setBlockName("CbDarkYellow").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkYellow");
-    		GameRegistry.registerBlock(CbDarkYellow, "CbDarkYellow");
-    		CbDarkCyan = new CbColorBlock().setBlockName("CbDarkCyan").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkCyan");
-    		GameRegistry.registerBlock(CbDarkCyan, "CbDarkCyan");
-    		CbDarkPurple = new CbColorBlock().setBlockName("CbDarkPurple").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkPurple");
-    		GameRegistry.registerBlock(CbDarkPurple, "CbDarkPurple");
-    		CbDarkBlueishCyan = new CbColorBlock().setBlockName("CbDarkBlueishCyan").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkBlueishCyan");
-    		GameRegistry.registerBlock(CbDarkBlueishCyan, "CbDarkBlueishCyan");
-    		CbDarkBrownishRed = new CbColorBlock().setBlockName("CbDarkBrownishRed").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkBrownishRed");
-    		GameRegistry.registerBlock(CbDarkBrownishRed, "CbDarkBrownishRed");
-    		CbDarkCyanishGreen = new CbColorBlock().setBlockName("CbDarkCyanishGreen").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkCyanishGreen");
-    		GameRegistry.registerBlock(CbDarkCyanishGreen, "CbDarkCyanishGreen"); 
-    		CbDarkBlue = new CbColorBlock().setBlockName("CbDarkBlue").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkBlue");
-    		GameRegistry.registerBlock(CbDarkBlue, "CbDarkBlue"); 
-    		CbDarkGrey = new CbColorBlock().setBlockName("CbDarkGrey").setCreativeTab(colorblockTab).setBlockTextureName(modid + ":" + "DarkGrey");
-    		GameRegistry.registerBlock(CbDarkGrey, "CbDarkGrey"); 
-        		
-        		//Items
-    			CbWhiteDust = new CbColorItem().setUnlocalizedName("CbWhiteDust").setCreativeTab(colorblockTab).setTextureName(modid + ":" + "WhiteDust");
-    			GameRegistry.registerItem(CbWhiteDust, "CbWhiteDust"); 
-    			CbWhiteIngot = new CbColorItem().setUnlocalizedName("CbWhiteIngot").setCreativeTab(colorblockTab).setTextureName(modid + ":" + "WhiteIngot");
-    			GameRegistry.registerItem(CbWhiteIngot, "CbWhiteIngot"); 
+        	//Crafting Recipes
 
-        		//Recipes
-
-        		GameRegistry.addShapedRecipe(new ItemStack(CbWhiteDust, 32), new Object[] { "IOI", "OGO", "IOI", 'I', Items.iron_ingot, 'O', Blocks.obsidian, 'G', Blocks.glowstone });
-        		GameRegistry.addSmelting(CbWhiteDust, new ItemStack(CbWhiteIngot, 2), 0.1F);
-        		GameRegistry.addShapedRecipe(new ItemStack(CbWhite, 4), new Object[] { "WW", "WW", 'W', CbWhiteIngot});
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbBlack, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 0)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbRed, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 1)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbGreen, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 2)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbBrown, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 3)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbBlue, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 4)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbPurple, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 5)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbCyan, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 6)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbLightGrey, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 7)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbGrey, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 8)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbPink, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 9)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbLimeGreen, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 10)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbYellow, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 11)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbLightBlue, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 12)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbMagenta, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 13)  });
-        		GameRegistry.addShapelessRecipe(new ItemStack(CbOrange, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 14)  });
-
-
-
-
-
-
-
-        		
-
-
-        		
+        	GameRegistry.addShapedRecipe(new ItemStack(CbWhiteDust, 32), new Object[] { "IOI", "OGO", "IOI", 'I', Items.iron_ingot, 'O', Blocks.obsidian, 'G', Blocks.glowstone });
+        	GameRegistry.addShapedRecipe(new ItemStack(CbWhite, 4), new Object[] { "WW", "WW", 'W', CbWhiteIngot});
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbBlack, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 0)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbRed, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 1)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbGreen, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 2)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbBrown, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 3)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbBlue, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 4)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbPurple, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 5)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbCyan, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 6)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbLightGrey, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 7)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbGrey, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 8)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbPink, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 9)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbLimeGreen, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 10)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbYellow, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 11)  });
+       		GameRegistry.addShapelessRecipe(new ItemStack(CbLightBlue, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 12)  });
+       		GameRegistry.addShapelessRecipe(new ItemStack(CbMagenta, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 13)  });
+        	GameRegistry.addShapelessRecipe(new ItemStack(CbOrange, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 14)  });
+	
         }
         
 
