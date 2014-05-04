@@ -1,4 +1,4 @@
-package colorblocks;
+package colorblocks.proxy;
 
 public class CommonProxy {
 	// Client stuff

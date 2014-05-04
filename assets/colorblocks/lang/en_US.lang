@@ -1,4 +1,12 @@
-itemGroup.colorblockTab=Color Blocks
+itemGroup.BlueTab=Blue Color Blocks
+itemGroup.PinkTab=Pink Color Blocks
+itemGroup.GreenTab=Green Color Blocks
+itemGroup.RedTab=Red Color Blocks
+itemGroup.GrayTab=Gray Color Blocks
+itemGroup.BrownTab=Brown Color Blocks
+itemGroup.YellowTab=Yellow Color Blocks
+itemGroup.ItemTab=Color Materials
+
 tile.CbBlack.name=Black 
 tile.CbBlue.name=Blue 
 tile.CbBrown.name=Brown 
