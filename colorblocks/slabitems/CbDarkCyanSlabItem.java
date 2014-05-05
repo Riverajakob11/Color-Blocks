@@ -1,5 +1,8 @@
 package colorblocks.slabitems;
 
+import colorblocks.ColorBlocks;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,11 +10,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import colorblocks.ColorBlocks;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
-public class CbMagentaSlabItem extends ItemBlock
+public class CbDarkCyanSlabItem extends ItemBlock
 {
         private final boolean field_150948_b;
         public  static BlockSlab field_150949_c;
@@ -19,11 +19,11 @@ public class CbMagentaSlabItem extends ItemBlock
 
 
 
-        public CbMagentaSlabItem(Block block)
+        public CbDarkCyanSlabItem(Block block)
         {
         		super(block);
-        		this.field_150949_c = ColorBlocks.CbMagentaHalfSlab;
-        		this.field_150947_d = ColorBlocks.CbMagentaFullSlab;
+        		this.field_150949_c = ColorBlocks.CbDarkCyanHalfSlab;
+        		this.field_150947_d = ColorBlocks.CbDarkCyanFullSlab;
         		this.field_150948_b = false;
                 this.setMaxDamage(0);
                 this.setHasSubtypes(true);

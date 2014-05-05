@@ -22,8 +22,8 @@ public class CbOrangeSlabItem extends ItemBlock
         public CbOrangeSlabItem(Block block)
         {
         		super(block);
-        		this.field_150949_c = ColorBlocks.CbBlackHalfSlab;
-        		this.field_150947_d = ColorBlocks.CbBlackFullSlab;
+        		this.field_150949_c = ColorBlocks.CbOrangeHalfSlab;
+        		this.field_150947_d = ColorBlocks.CbOrangeFullSlab;
         		this.field_150948_b = false;
                 this.setMaxDamage(0);
                 this.setHasSubtypes(true);
