@@ -2,9 +2,10 @@ package colorblocks;
 
 import java.io.File;
 
-import colorblocks.colors.CbColorBlock;
-import colorblocks.colors.CbColorItem;
-import colorblocks.colors.CbColorSlab;
+import colorblocks.blocks.CbColorBlock;
+import colorblocks.blocks.CbColorSlab;
+import colorblocks.blocks.CbColorStair;
+import colorblocks.items.CbColorItem;
 import colorblocks.proxy.CommonProxy;
 import colorblocks.slabitems.CbBlueSlabItem;
 import colorblocks.slabitems.CbBlackSlabItem;
@@ -49,6 +50,7 @@ import colorblocks.slabitems.CbYellowSlabItem;
 import colorblocks.slabitems.CbYellowishGreenSlabItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -124,8 +126,7 @@ public class ColorBlocks {
         public static Block CbDarkCyanishGreen;
         public static Block CbDarkBlue;
         public static Block CbDarkGrey;
-        
-        //HalfSlab
+        //Stairs
         public static BlockSlab CbBlackHalfSlab;
         public static BlockSlab CbBlueHalfSlab;
         public static BlockSlab CbBrownHalfSlab;
@@ -167,7 +168,7 @@ public class ColorBlocks {
         public static BlockSlab CbDarkCyanishGreenHalfSlab;
         public static BlockSlab CbDarkBlueHalfSlab;
         public static BlockSlab CbDarkGreyHalfSlab;
-        //FullSlab
+        //Double Slabs
         public static BlockSlab CbBlackFullSlab;
         public static BlockSlab CbBlueFullSlab;
         public static BlockSlab CbBrownFullSlab;
@@ -209,6 +210,48 @@ public class ColorBlocks {
         public static BlockSlab CbDarkCyanishGreenFullSlab;
         public static BlockSlab CbDarkBlueFullSlab;
         public static BlockSlab CbDarkGreyFullSlab;
+        // Color Stairs
+        public static BlockStairs CbBlackStair;
+        public static BlockStairs CbBlueStair;
+        public static BlockStairs CbBrownStair;
+        public static BlockStairs CbCyanStair;
+        public static BlockStairs CbDarkGreenStair;
+        public static BlockStairs CbGreenStair;
+        public static BlockStairs CbGreyStair;
+        public static BlockStairs CbLightBlueStair;
+        public static BlockStairs CbLightBrownStair;
+        public static BlockStairs CbLightGreyStair;
+        public static BlockStairs CbLightPurpleStair;
+        public static BlockStairs CbLimeGreenStair;
+        public static BlockStairs CbMagentaStair;
+        public static BlockStairs CbOrangeStair;
+        public static BlockStairs CbPinkStair;
+        public static BlockStairs CbPurpleStair;
+        public static BlockStairs CbRedStair;
+        public static BlockStairs CbWhiteStair;
+        public static BlockStairs CbWineRedStair;
+        public static BlockStairs CbYellowStair;
+        public static BlockStairs CbRedOrangeStair;
+        public static BlockStairs CbLightOrangeStair;
+        public static BlockStairs CbWhitePinkStair;
+        public static BlockStairs CbSharpPinkStair;
+        public static BlockStairs CbLightPurpleBlueStair;
+        public static BlockStairs CbPurpleBlueStair;
+        public static BlockStairs CbBlueishWhiteStair;
+        public static BlockStairs CbLightCyanStair;
+        public static BlockStairs CbGreenishCyanStair;
+        public static BlockStairs CbYellowishGreenStair;
+        public static BlockStairs CbLightYellowStair;
+        public static BlockStairs CbLightOrangeRedStair;
+        public static BlockStairs CbWhitePurpleStair;
+        public static BlockStairs CbDarkYellowStair;
+        public static BlockStairs CbDarkCyanStair;
+        public static BlockStairs CbDarkPurpleStair;
+        public static BlockStairs CbDarkBlueishCyanStair;
+        public static BlockStairs CbDarkBrownishRedStair;
+        public static BlockStairs CbDarkCyanishGreenStair;
+        public static BlockStairs CbDarkBlueStair;
+        public static BlockStairs CbDarkGreyStair;
         //Items 1.2
         public static Item CbWhiteDust;
         public static Item CbWhiteIngot;
@@ -446,6 +489,63 @@ public class ColorBlocks {
     		CbYellowFullSlab = new CbColorSlab(true, null, "Yellow", 7);
     		CbLightYellowFullSlab = new CbColorSlab(true, null, "LightYellow", 7);
     		CbDarkYellowFullSlab = new CbColorSlab(true, null, "DarkYellow", 7);
+    		
+    		//Defines the stairs in minecraft
+    		
+    		//GrayTab
+        	CbBlackStair = new CbColorStair(CbBlack, 0, "Black", 2);
+    		CbGreyStair = new CbColorStair(CbGrey, 0, "Grey", 2);
+    		CbLightGreyStair = new CbColorStair(CbLightGrey, 0, "LightGrey", 2);
+    		CbWhiteStair = new CbColorStair(CbWhite, 0, "White", 2);
+    		CbDarkGreyStair = new CbColorStair(CbDarkGrey, 0, "DarkGrey", 2);
+
+    		//BlueTab
+    		CbBlueStair = new CbColorStair(CbBlue, 0, "Blue", 0);
+    		CbLightBlueStair = new CbColorStair(CbLightBlue, 0, "LightBlue", 0);
+    		CbDarkBlueishCyanStair = new CbColorStair(CbDarkBlueishCyan, 0, "DarkBlueishCyan", 0);
+    		CbDarkBlueStair = new CbColorStair(CbDarkBlue, 0, "DarkBlue", 0);
+    		CbCyanStair = new CbColorStair(CbCyan, 0, "Cyan", 0);
+    		CbLightCyanStair = new CbColorStair(CbLightCyan, 0, "LightCyan", 0);
+    		CbBlueishWhiteStair = new CbColorStair(CbBlueishWhite, 0, "BlueishWhite", 0);
+
+    		//GreenTab
+    		CbGreenStair = new CbColorStair(CbGreen, 0, "Green", 3);
+    		CbDarkGreenStair = new CbColorStair(CbDarkGreen, 0, "DarkGreen", 3);
+    		CbLimeGreenStair = new CbColorStair(CbLimeGreen, 0, "LimeGreen", 3);
+    		CbGreenishCyanStair = new CbColorStair(CbGreenishCyan, 0, "GreenishCyan", 3);
+    		CbYellowishGreenStair = new CbColorStair(CbYellowishGreen, 0, "YellowishGreen", 3);
+    		CbDarkCyanishGreenStair = new CbColorStair(CbDarkCyanishGreen, 0, "DarkCyanishGreen", 3);
+    		CbDarkCyanStair = new CbColorStair(CbDarkCyan, 0, "DarkCyan", 3);
+    		
+    		//BrownTab
+    		CbBrownStair = new CbColorStair(CbBrown, 0, "Brown", 1);
+    		CbLightBrownStair = new CbColorStair(CbLightBrown, 0, "LightBrown", 1);
+    		CbDarkBrownishRedStair = new CbColorStair(CbDarkBrownishRed, 0, "DarkBrownishRed", 1);
+
+    		//PinkTab
+			CbLightPurpleStair = new CbColorStair(CbLightPurple, 0, "LightPurple", 4);
+    		CbMagentaStair = new CbColorStair(CbMagenta, 0, "Magenta", 4);
+    		CbPinkStair = new CbColorStair(CbPink, 0, "Pink", 4);
+    		CbPurpleStair = new CbColorStair(CbPurple, 0, "Purple", 4);
+    		CbWhitePinkStair = new CbColorStair(CbWhitePink, 0, "WhitePink", 4);
+    		CbSharpPinkStair = new CbColorStair(CbSharpPink, 0, "SharpPink", 4);
+    		CbLightPurpleBlueStair = new CbColorStair(CbLightPurpleBlue, 0, "LightPurpleBlue", 4);
+    		CbPurpleBlueStair = new CbColorStair(CbPurpleBlue, 0, "PurpleBlue", 4);
+    		CbWhitePurpleStair = new CbColorStair(CbWhitePurple, 0, "WhitePurple", 4);
+    		CbDarkPurpleStair = new CbColorStair(CbDarkPurple, 0, "DarkPurple", 4);
+    		
+    		//RedTab
+    		CbOrangeStair = new CbColorStair(CbOrange, 0, "Orange", 6);
+    		CbRedStair = new CbColorStair(CbRed, 0, "Red", 6);
+    		CbWineRedStair = new CbColorStair(CbWineRed, 0, "WineRed", 6);
+    		CbRedOrangeStair = new CbColorStair(CbRedOrange, 0, "RedOrange", 6);
+    		CbLightOrangeStair = new CbColorStair(CbLightOrange, 0, "LightOrange", 6);
+    		CbLightOrangeRedStair = new CbColorStair(CbLightOrangeRed, 0, "LightOrangeRed", 6);
+    		
+    		//YellowTab
+    		CbYellowStair = new CbColorStair(CbYellow, 0, "Yellow", 5);
+    		CbLightYellowStair = new CbColorStair(CbLightYellow, 0, "LightYellow", 5);
+    		CbDarkYellowStair = new CbColorStair(CbDarkYellow, 0, "DarkYellow", 5);
 
 
     		//Defines items in minecraft
@@ -537,7 +637,7 @@ public class ColorBlocks {
     		GameRegistry.registerBlock(CbDarkCyanishGreenHalfSlab, CbDarkCyanishGreenSlabItem.class, "DarkCyanishGreenHalfSlab"); 
     		GameRegistry.registerBlock(CbDarkBlueHalfSlab, CbDarkBlueSlabItem.class, "DarkBlueHalfSlab"); 
     		GameRegistry.registerBlock(CbDarkGreyHalfSlab, CbDarkGreySlabItem.class, "DarkGreyHalfSlab"); 
-    		//Fullslabs
+    		//Double slabs
     		GameRegistry.registerBlock(CbBlackFullSlab, CbBlackSlabItem.class, "BlackFullSlab");
     		GameRegistry.registerBlock(CbBlueFullSlab, CbBlueSlabItem.class, "BlueFullSlab");
     		GameRegistry.registerBlock(CbBrownFullSlab, CbBrownSlabItem.class, "BrownFullSlab");
@@ -578,7 +678,50 @@ public class ColorBlocks {
     		GameRegistry.registerBlock(CbDarkBrownishRedFullSlab, CbDarkBrownishRedSlabItem.class, "DarkBrownishRedFullSlab");
     		GameRegistry.registerBlock(CbDarkCyanishGreenFullSlab, CbDarkCyanishGreenSlabItem.class, "DarkCyanishGreenFullSlab"); 
     		GameRegistry.registerBlock(CbDarkBlueFullSlab, CbDarkBlueSlabItem.class, "DarkBlueFullSlab"); 
-    		GameRegistry.registerBlock(CbDarkGreyFullSlab, CbDarkGreySlabItem.class, "DarkGreyFullSlab"); 
+    		GameRegistry.registerBlock(CbDarkGreyFullSlab, CbDarkGreySlabItem.class, "DarkGreyFullSlab");
+    		
+    		//Register Stairs
+    		GameRegistry.registerBlock(CbBlackStair, "BlackStair");
+    		GameRegistry.registerBlock(CbBlueStair, "BlueStair");
+    		GameRegistry.registerBlock(CbBrownStair, "BrownStair");
+    		GameRegistry.registerBlock(CbCyanStair, "CyanStair");
+    		GameRegistry.registerBlock(CbDarkGreenStair, "DarkGreenStair"); 		
+    		GameRegistry.registerBlock(CbGreenStair, "GreenStair");
+    		GameRegistry.registerBlock(CbGreyStair, "GreyStair");
+    		GameRegistry.registerBlock(CbLightBlueStair, "LightBlueStair");
+    		GameRegistry.registerBlock(CbLightBrownStair, "LightBrownStair");
+    		GameRegistry.registerBlock(CbLightGreyStair, "LightGreyStair");
+    		GameRegistry.registerBlock(CbLightPurpleStair, "LightPurpleStair");
+    		GameRegistry.registerBlock(CbLimeGreenStair, "LimeGreenStair");
+    		GameRegistry.registerBlock(CbMagentaStair, "MagentaStair");
+    		GameRegistry.registerBlock(CbOrangeStair, "OrangeStair");
+    		GameRegistry.registerBlock(CbPinkStair, "PinkStair");
+    		GameRegistry.registerBlock(CbPurpleStair, "PurpleStair");
+    		GameRegistry.registerBlock(CbRedStair, "RedStair");
+    		GameRegistry.registerBlock(CbWhiteStair, "WhiteStair");
+    		GameRegistry.registerBlock(CbWineRedStair, "WineRedStair");
+    		GameRegistry.registerBlock(CbYellowStair, "YellowStair");
+    		GameRegistry.registerBlock(CbRedOrangeStair, "RedOrangeStair");
+    		GameRegistry.registerBlock(CbLightOrangeStair, "LightOrangeStair");
+    		GameRegistry.registerBlock(CbWhitePinkStair, "WhitePinkStair");
+    		GameRegistry.registerBlock(CbSharpPinkStair, "SharpPinkStair");
+    		GameRegistry.registerBlock(CbLightPurpleBlueStair, "LightPurpleBlueStair");
+    		GameRegistry.registerBlock(CbPurpleBlueStair, "PurpleBlueStair");
+    		GameRegistry.registerBlock(CbBlueishWhiteStair, "BlueishWhiteStair");
+    		GameRegistry.registerBlock(CbLightCyanStair, "LightCyanStair");
+    		GameRegistry.registerBlock(CbGreenishCyanStair, "GreenishCyanStair");
+    		GameRegistry.registerBlock(CbYellowishGreenStair, "YellowishGreenStair");
+    		GameRegistry.registerBlock(CbLightYellowStair, "LightYellowStair");
+    		GameRegistry.registerBlock(CbLightOrangeRedStair, "LightOrangeRedStair");
+    		GameRegistry.registerBlock(CbWhitePurpleStair, "WhitePurpleStair");
+    		GameRegistry.registerBlock(CbDarkYellowStair, "DarkYellowStair");
+    		GameRegistry.registerBlock(CbDarkCyanStair, "DarkCyanStair");
+    		GameRegistry.registerBlock(CbDarkPurpleStair, "DarkPurpleStair");
+    		GameRegistry.registerBlock(CbDarkBlueishCyanStair, "DarkBlueishCyanStair");
+    		GameRegistry.registerBlock(CbDarkBrownishRedStair, "DarkBrownishRedStair");
+    		GameRegistry.registerBlock(CbDarkCyanishGreenStair, "DarkCyanishGreenStair"); 
+    		GameRegistry.registerBlock(CbDarkBlueStair, "DarkBlueStair"); 
+    		GameRegistry.registerBlock(CbDarkGreyStair, "DarkGreyStair"); 
         		
         		//Registers items in Minecraft
     		GameRegistry.registerItem(CbWhiteDust, "WhiteDust"); 

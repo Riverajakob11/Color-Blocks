@@ -1,4 +1,6 @@
-package colorblocks.colors;
+package colorblocks.blocks;
+
+import java.util.Random;
 
 import colorblocks.ColorBlocks;
 import cpw.mods.fml.relauncher.Side;
@@ -25,6 +27,7 @@ public class CbColorSlab extends BlockSlab{
 		setHardness(0.1F);
 		setStepSound(Block.soundTypeStone);
 		setLightLevel(1F);
+		this.setLightOpacity(0);
 		if(tab == 0)
 		this.setCreativeTab(Color.BlueTab);
 		if(tab == 1)
@@ -55,7 +58,8 @@ public class CbColorSlab extends BlockSlab{
         return func_150003_a(this) ? Item.getItemFromBlock(this) : (this == Color.CbBlackFullSlab ? Item.getItemFromBlock(Color.CbBlackHalfSlab) : (this == Color.CbBlueFullSlab ? Item.getItemFromBlock(Color.CbBlueHalfSlab) : Item.getItemFromBlock(Blocks.stone_slab)));
     }
 
-
+	  
+	  
 	//getFullSlabName
 	@Override
 	public String func_150002_b(int i) {

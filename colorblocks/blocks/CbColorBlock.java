@@ -1,4 +1,4 @@
-package colorblocks.colors;
+package colorblocks.blocks;
 
 import colorblocks.ColorBlocks;
 import net.minecraft.block.Block;
