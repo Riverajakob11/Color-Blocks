@@ -2,6 +2,7 @@ package colorblocks.blocks;
 
 import java.util.Random;
 
+import keeperofmee.keeperapi.main.KeeperAPI;
 import colorblocks.ColorBlocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -46,17 +47,18 @@ public class CbColorSlab extends BlockSlab{
 		
 	}
 
+
 	 @SideOnly(Side.CLIENT)
 	    private static boolean func_150003_a(Block block)
 	    {
 	        return block == Color.CbBlackHalfSlab || block == Color.CbBlueHalfSlab || block == Color.CbBlueishWhiteHalfSlab || block == Color.CbBrownHalfSlab || block == Color.CbCyanHalfSlab || block == Color.CbDarkBlueHalfSlab || block == Color.CbDarkBlueishCyanHalfSlab || block == Color.CbDarkBrownishRedHalfSlab || block == Color.CbDarkCyanHalfSlab || block == Color.CbDarkCyanishGreenHalfSlab || block == Color.CbDarkGreenHalfSlab || block == Color.CbDarkGreyHalfSlab || block == Color.CbDarkPurpleHalfSlab || block == Color.CbDarkYellowHalfSlab || block == Color.CbGreenHalfSlab || block == Color.CbGreenishCyanHalfSlab || block == Color.CbGreyHalfSlab || block == Color.CbLightBlueHalfSlab || block == Color.CbLightGreyHalfSlab || block == Color.CbLightPurpleHalfSlab || block == Color.CbLightOrangeHalfSlab || block == Color.CbLightOrangeRedHalfSlab || block == Color.CbLightPurpleBlueHalfSlab || block == Color.CbLightBrownHalfSlab || block == Color.CbLightCyanHalfSlab || block == Color.CbLightYellowHalfSlab || block == Color.CbLimeGreenHalfSlab || block == Color.CbMagentaHalfSlab || block == Color.CbOrangeHalfSlab || block == Color.CbPinkHalfSlab || block == Color.CbPurpleHalfSlab || block == Color.CbPurpleBlueHalfSlab || block == Color.CbRedHalfSlab || block == Color.CbRedOrangeHalfSlab || block == Color.CbSharpPinkHalfSlab || block == Color.CbWhiteHalfSlab || block == Color.CbWhitePinkHalfSlab || block == Color.CbWhitePurpleHalfSlab || block == Color.CbWineRedHalfSlab || block == Color.CbYellowHalfSlab || block == Color.CbYellowishGreenHalfSlab;
 	    }
 	
-	  @SideOnly(Side.CLIENT)
-    public Item getItem(World world, int i, int l, int k)
-    {
-        return func_150003_a(this) ? Item.getItemFromBlock(this) : (this == Color.CbBlackFullSlab ? Item.getItemFromBlock(Color.CbBlackHalfSlab) : (this == Color.CbBlueFullSlab ? Item.getItemFromBlock(Color.CbBlueHalfSlab) : Item.getItemFromBlock(Blocks.stone_slab)));
-    }
+	 @SideOnly(Side.CLIENT)
+	    public Item getItem(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
+	    {
+	        return func_150003_a(this) ? Item.getItemFromBlock(this) : Item.getItemFromBlock(this);
+	    }
 
 	  
 	  
@@ -67,3 +69,5 @@ public class CbColorSlab extends BlockSlab{
 	}
 
 }
+
+

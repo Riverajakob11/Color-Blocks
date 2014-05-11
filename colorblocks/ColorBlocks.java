@@ -2,6 +2,8 @@ package colorblocks;
 
 import java.io.File;
 
+import keeperofmee.keeperapi.main.KeeperAPI;
+import keeperofmee.keeperapi.method.CustomItemSlab;
 import colorblocks.blocks.CbColorBlock;
 import colorblocks.blocks.CbColorSlab;
 import colorblocks.blocks.CbColorStair;
@@ -74,11 +76,12 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
-@Mod(modid="ColorBlocks", name="ColorBlocks", version="1.1")
+@Mod(modid="ColorBlocks", name="ColorBlocks", version="1.4", canBeDeactivated=true)
 public class ColorBlocks {
 
 	//modid = ColorBlocks
 	public static final String modid = "ColorBlocks";
+	
 	
         // The instance of your mod that Forge uses.
         @Instance("ColorBlocks")
@@ -319,6 +322,7 @@ public class ColorBlocks {
         @EventHandler // used in 1.6.2
         public void preInit(FMLPreInitializationEvent event) {   
         	
+        	
         	//Defines Blocks in Minecraft
         	
         	//GrayTab
@@ -377,7 +381,7 @@ public class ColorBlocks {
     		CbDarkYellow = new CbColorBlock("DarkYellow", YellowTab);
     		
         	//Defines Half Slabs in Minecraft
-    		
+    		    		
     		//GrayTab
         	CbBlackHalfSlab = new CbColorSlab(false, null, "Black", 2);
     		CbGreyHalfSlab = new CbColorSlab(false, null, "Grey", 2);
@@ -552,6 +556,8 @@ public class ColorBlocks {
     		CbWhiteDust = new CbColorItem().setUnlocalizedName("WhiteDust").setCreativeTab(ItemTab).setTextureName(modid + ":" + "WhiteDust");
     		CbWhiteIngot = new CbColorItem().setUnlocalizedName("WhiteIngot").setCreativeTab(ItemTab).setTextureName(modid + ":" + "WhiteIngot");
 
+    	
+        	
         	//Registers the blocks in minecraft
     		GameRegistry.registerBlock(CbBlack, "Black");
     		GameRegistry.registerBlock(CbBlue, "Blue");
