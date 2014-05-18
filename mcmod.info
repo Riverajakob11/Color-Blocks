@@ -1,18 +1,16 @@
 [
 {
-"modid": "ColorBlocks",
-"name": "Color Blocks",
-"description": "Adds glowing blast resistant clean colored blocks which can be used for pixel art.",
-"version": "1.4",
-"url": "",
-"authorList": [
-"KeeperofMee"
-],
-"credits": "Thanks for creating the tools for us to create mods MCP/Forge!",
-"logoFile": "assets/colorblocks/mcmod/logoFile.png",
-"screenshots": [],
-"dependencies": ["forge-10.12.0.1061"
-],
-"mcversion": "1.7.2"
+  "modid": "colorblocks",
+  "name": "Color Blocks",
+  "description": "Adds glowing blast resistant clean colored blocks which can be used for pixel art.",
+  "version": "1.4",
+  "mcversion": "1.7.2",
+  "url": "www.keeperofmee.weebly.com",
+  "updateUrl": "",
+  "authorList": ["KeeperofMee"],
+  "credits": "",
+  "logoFile": "assets/colorblocks/mcmod/colorblockslogo.png",
+  "screenshots": ["assets/colorblocks/mcmod/pixelart.png", "assets/colorblocks/mcmod/colors.png"],
+  "dependencies": [Forge]
 }
 ]

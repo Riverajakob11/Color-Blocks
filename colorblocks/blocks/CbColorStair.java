@@ -11,8 +11,7 @@ public class CbColorStair extends BlockStairs{
 	public CbColorStair(Block block, int extender,String string, int tab) {
 		super(block, 1);
 		this.block = block;
-		this.setBlockTextureName(ColorBlocks.modid + ":" + this.block.getUnlocalizedName().substring(5));
-		this.setBlockName("Cb" + string + "Slab");
+		this.setBlockName("Cb" + string + "Stair");
 		setResistance(50F);
 		setHardness(0.1F);
 		setStepSound(Block.soundTypeStone);

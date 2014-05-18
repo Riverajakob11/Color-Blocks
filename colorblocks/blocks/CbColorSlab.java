@@ -2,7 +2,6 @@ package colorblocks.blocks;
 
 import java.util.Random;
 
-import keeperofmee.keeperapi.main.KeeperAPI;
 import colorblocks.ColorBlocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

@@ -20,7 +20,6 @@ tile.CbLightGrey.name=Light Gray
 tile.CbLightPurple.name=Light Purple 
 tile.CbLimeGreen.name=Lime Green 
 tile.CbMagenta.name=Magenta
-tile.CbMultiColor.name=Multi Color 
 tile.CbOrange.name=Orange
 tile.CbPink.name=Pink
 tile.CbPurple.name=Purple
@@ -49,6 +48,10 @@ tile.CbDarkBrownishRed.name=Brownish Red
 tile.CbDarkCyanishGreen.name=Dark Cyanish Green
 tile.CbDarkBlue.name=Dark Blue
 tile.CbDarkGrey.name=Dark Gray
+tile.CbNavyBlue.name=Navy Blue
+tile.CbLavender.name=Lavender
+tile.CbLightLavender.name=Light Lavender
+
 
 tile.CbBlackSlab.name=Black Slab
 tile.CbBlueSlab.name=Blue Slab
@@ -91,6 +94,10 @@ tile.CbDarkBrownishRedSlab.name=Brownish Red Slab
 tile.CbDarkCyanishGreenSlab.name=Dark Cyanish Green Slab
 tile.CbDarkBlueSlab.name=Dark Blue Slab
 tile.CbDarkGreySlab.name=Dark Gray Slab
+tile.CbNavyBlueSlab.name=Navy Blue Slab
+tile.CbLavenderSlab.name=Lavender Slab
+tile.CbLightLavenderSlab.name=Light Lavender Slab
+
 
 tile.CbBlackStair.name=Black Stair
 tile.CbBlueStair.name=Blue Stair
@@ -133,6 +140,9 @@ tile.CbDarkBrownishRedStair.name=Brownish Red Stair
 tile.CbDarkCyanishGreenStair.name=Dark Cyanish Green Stair
 tile.CbDarkBlueStair.name=Dark Blue Stair
 tile.CbDarkGreyStair.name=Dark Gray Stair
+tile.CbNavyBlueStair.name=Navy Blue Stair
+tile.CbLavenderStair.name=Lavender Stair
+tile.CbLightLavenderStair.name=Light Lavender Stair
 
 item.CbWhiteDust.name=White Dust
 item.CbWhiteIngot.name=White Ingot

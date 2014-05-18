@@ -1,54 +1,12 @@
 package colorblocks;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
-import keeperofmee.keeperapi.main.KeeperAPI;
-import keeperofmee.keeperapi.method.CustomItemSlab;
 import colorblocks.blocks.CbColorBlock;
 import colorblocks.blocks.CbColorSlab;
 import colorblocks.blocks.CbColorStair;
-import colorblocks.items.CbBlackSlabItem;
-import colorblocks.items.CbBlueSlabItem;
-import colorblocks.items.CbBlueishWhiteSlabItem;
-import colorblocks.items.CbBrownSlabItem;
 import colorblocks.items.CbColorItem;
-import colorblocks.items.CbCyanSlabItem;
-import colorblocks.items.CbDarkBlueSlabItem;
-import colorblocks.items.CbDarkBlueishCyanSlabItem;
-import colorblocks.items.CbDarkBrownishRedSlabItem;
-import colorblocks.items.CbDarkCyanSlabItem;
-import colorblocks.items.CbDarkCyanishGreenSlabItem;
-import colorblocks.items.CbDarkGreenSlabItem;
-import colorblocks.items.CbDarkGreySlabItem;
-import colorblocks.items.CbDarkPurpleSlabItem;
-import colorblocks.items.CbDarkYellowSlabItem;
-import colorblocks.items.CbGreenSlabItem;
-import colorblocks.items.CbGreenishCyanSlabItem;
-import colorblocks.items.CbGreySlabItem;
-import colorblocks.items.CbLightBlueSlabItem;
-import colorblocks.items.CbLightBrownSlabItem;
-import colorblocks.items.CbLightCyanSlabItem;
-import colorblocks.items.CbLightGreySlabItem;
-import colorblocks.items.CbLightOrangeRedSlabItem;
-import colorblocks.items.CbLightOrangeSlabItem;
-import colorblocks.items.CbLightPurpleBlueSlabItem;
-import colorblocks.items.CbLightPurpleSlabItem;
-import colorblocks.items.CbLightYellowSlabItem;
-import colorblocks.items.CbLimeGreenSlabItem;
-import colorblocks.items.CbMagentaSlabItem;
-import colorblocks.items.CbOrangeSlabItem;
-import colorblocks.items.CbPinkSlabItem;
-import colorblocks.items.CbPurpleBlueSlabItem;
-import colorblocks.items.CbPurpleSlabItem;
-import colorblocks.items.CbRedOrangeSlabItem;
-import colorblocks.items.CbRedSlabItem;
-import colorblocks.items.CbSharpPinkSlabItem;
-import colorblocks.items.CbWhitePinkSlabItem;
-import colorblocks.items.CbWhitePurpleSlabItem;
-import colorblocks.items.CbWhiteSlabItem;
-import colorblocks.items.CbWineRedSlabItem;
-import colorblocks.items.CbYellowSlabItem;
-import colorblocks.items.CbYellowishGreenSlabItem;
 import colorblocks.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
@@ -76,11 +34,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
-@Mod(modid="ColorBlocks", name="ColorBlocks", version="1.4", canBeDeactivated=true)
+@Mod(modid="colorblocks", name="Color Blocks", version="1.4")
 public class ColorBlocks {
 
 	//modid = ColorBlocks
-	public static final String modid = "ColorBlocks";
+	public static final String modid = "colorblocks";
 	
 	
         // The instance of your mod that Forge uses.
@@ -129,6 +87,10 @@ public class ColorBlocks {
         public static Block CbDarkCyanishGreen;
         public static Block CbDarkBlue;
         public static Block CbDarkGrey;
+        public static Block CbNavyBlue;
+        public static Block CbLavender;
+        public static Block CbLightLavender;
+
         //Stairs
         public static BlockSlab CbBlackHalfSlab;
         public static BlockSlab CbBlueHalfSlab;
@@ -171,6 +133,10 @@ public class ColorBlocks {
         public static BlockSlab CbDarkCyanishGreenHalfSlab;
         public static BlockSlab CbDarkBlueHalfSlab;
         public static BlockSlab CbDarkGreyHalfSlab;
+        public static BlockSlab CbNavyBlueHalfSlab;
+        public static BlockSlab CbLavenderHalfSlab;
+        public static BlockSlab CbLightLavenderHalfSlab;
+        
         //Double Slabs
         public static BlockSlab CbBlackFullSlab;
         public static BlockSlab CbBlueFullSlab;
@@ -213,6 +179,10 @@ public class ColorBlocks {
         public static BlockSlab CbDarkCyanishGreenFullSlab;
         public static BlockSlab CbDarkBlueFullSlab;
         public static BlockSlab CbDarkGreyFullSlab;
+        public static BlockSlab CbNavyBlueFullSlab;
+        public static BlockSlab CbLavenderFullSlab;
+        public static BlockSlab CbLightLavenderFullSlab;
+
         // Color Stairs
         public static BlockStairs CbBlackStair;
         public static BlockStairs CbBlueStair;
@@ -255,6 +225,11 @@ public class ColorBlocks {
         public static BlockStairs CbDarkCyanishGreenStair;
         public static BlockStairs CbDarkBlueStair;
         public static BlockStairs CbDarkGreyStair;
+        public static BlockStairs CbNavyBlueStair;
+        public static BlockStairs CbLavenderStair;
+        public static BlockStairs CbLightLavenderStair;
+
+
         //Items 1.2
         public static Item CbWhiteDust;
         public static Item CbWhiteIngot;
@@ -320,65 +295,70 @@ public class ColorBlocks {
         public static CommonProxy proxy;
  
         @EventHandler // used in 1.6.2
-        public void preInit(FMLPreInitializationEvent event) {   
+        public void preInit(FMLPreInitializationEvent event){   
         	
         	
         	//Defines Blocks in Minecraft
         	
         	//GrayTab
-        	CbBlack = new CbColorBlock("Black", GrayTab);
-    		CbGrey = new CbColorBlock("Grey", GrayTab);
-    		CbLightGrey = new CbColorBlock("LightGrey", GrayTab);
-    		CbWhite = new CbColorBlock("White", GrayTab);
-    		CbDarkGrey = new CbColorBlock("DarkGrey", GrayTab);
+        	CbBlack = new CbColorBlock("Black", GrayTab, 0, 0, 0, 0);
+    		CbGrey = new CbColorBlock("Grey", GrayTab, 0, 0, 0, 15);
+    		CbLightGrey = new CbColorBlock("LightGrey", GrayTab, 0, 0, 0, 15);
+    		CbWhite = new CbColorBlock("White", GrayTab, 15, 15, 15, 15);
+    		CbDarkGrey = new CbColorBlock("DarkGrey", GrayTab, 4, 4, 4, 4);
 
     		//BlueTab
-    		CbBlue = new CbColorBlock("Blue", BlueTab);
-    		CbLightBlue = new CbColorBlock("LightBlue", BlueTab);
-    		CbDarkBlueishCyan = new CbColorBlock("DarkBlueishCyan", BlueTab);
-    		CbDarkBlue = new CbColorBlock("DarkBlue", BlueTab);
-    		CbCyan = new CbColorBlock("Cyan", BlueTab);
-    		CbLightCyan = new CbColorBlock("LightCyan", BlueTab);
-    		CbBlueishWhite = new CbColorBlock("BlueishWhite", BlueTab);
+    		CbBlue = new CbColorBlock("Blue", BlueTab, 0, 0, 15, 15);
+    		CbLightBlue = new CbColorBlock("LightBlue", BlueTab, 12, 14, 15, 15);
+    		CbDarkBlueishCyan = new CbColorBlock("DarkBlueishCyan", BlueTab, 5, 10, 12, 12);
+    		CbDarkBlue = new CbColorBlock("DarkBlue", BlueTab, 0, 6, 10, 10);
+    		CbCyan = new CbColorBlock("Cyan", BlueTab, 7, 14, 15, 15);
+    		CbLightCyan = new CbColorBlock("LightCyan", BlueTab, 0, 0, 0, 15);
+    		CbBlueishWhite = new CbColorBlock("BlueishWhite", BlueTab, 0, 0, 0, 15);
+    		CbNavyBlue = new CbColorBlock("NavyBlue", BlueTab, 0, 0, 0, 15);
+
 
     		//GreenTab
-    		CbGreen = new CbColorBlock("Green", GreenTab);
-    		CbDarkGreen = new CbColorBlock("DarkGreen", GreenTab);
-    		CbLimeGreen = new CbColorBlock("LimeGreen", GreenTab);
-    		CbGreenishCyan = new CbColorBlock("GreenishCyan", GreenTab);
-    		CbYellowishGreen = new CbColorBlock("YellowishGreen", GreenTab);
-    		CbDarkCyanishGreen = new CbColorBlock("DarkCyanishGreen", GreenTab);
-    		CbDarkCyan = new CbColorBlock("DarkCyan", GreenTab);
+    		CbGreen = new CbColorBlock("Green", GreenTab, 0, 15, 0, 15);
+    		CbDarkGreen = new CbColorBlock("DarkGreen", GreenTab, 0, 0, 0, 15);
+    		CbLimeGreen = new CbColorBlock("LimeGreen", GreenTab, 0, 0, 0, 15);
+    		CbGreenishCyan = new CbColorBlock("GreenishCyan", GreenTab, 0, 0, 0, 15);
+    		CbYellowishGreen = new CbColorBlock("YellowishGreen", GreenTab, 0, 0, 0, 15);
+    		CbDarkCyanishGreen = new CbColorBlock("DarkCyanishGreen", GreenTab, 0, 0, 0, 15);
+    		CbDarkCyan = new CbColorBlock("DarkCyan", GreenTab, 0, 0, 0, 15);
     		
     		//BrownTab
-    		CbBrown = new CbColorBlock("Brown", BrownTab);
-    		CbLightBrown = new CbColorBlock("LightBrown", BrownTab);
-    		CbDarkBrownishRed = new CbColorBlock("DarkBrownishRed", BrownTab);
+    		CbBrown = new CbColorBlock("Brown", BrownTab, 0, 0, 0, 15);
+    		CbLightBrown = new CbColorBlock("LightBrown", BrownTab, 0, 0, 0, 15);
+    		CbDarkBrownishRed = new CbColorBlock("DarkBrownishRed", BrownTab, 0, 0, 0, 15);
 
     		//PinkTab
-			CbLightPurple = new CbColorBlock("LightPurple", PinkTab);
-    		CbMagenta = new CbColorBlock("Magenta", PinkTab);
-    		CbPink = new CbColorBlock("Pink", PinkTab);
-    		CbPurple = new CbColorBlock("Purple", PinkTab);
-    		CbWhitePink = new CbColorBlock("WhitePink", PinkTab);
-    		CbSharpPink = new CbColorBlock("SharpPink", PinkTab);
-    		CbLightPurpleBlue = new CbColorBlock("LightPurpleBlue", PinkTab);
-    		CbPurpleBlue = new CbColorBlock("PurpleBlue", PinkTab);
-    		CbWhitePurple = new CbColorBlock("WhitePurple", PinkTab);
-    		CbDarkPurple = new CbColorBlock("DarkPurple", PinkTab);
+			CbLightPurple = new CbColorBlock("LightPurple", PinkTab, 0, 0, 0, 15);
+    		CbMagenta = new CbColorBlock("Magenta", PinkTab, 0, 0, 0, 15);
+    		CbPink = new CbColorBlock("Pink", PinkTab, 0, 0, 0, 15);
+    		CbPurple = new CbColorBlock("Purple", PinkTab, 0, 0, 0, 15);
+    		CbWhitePink = new CbColorBlock("WhitePink", PinkTab, 0, 0, 0, 15);
+    		CbSharpPink = new CbColorBlock("SharpPink", PinkTab, 0, 0, 0, 15);
+    		CbLightPurpleBlue = new CbColorBlock("LightPurpleBlue", PinkTab, 0, 0, 0, 15);
+    		CbPurpleBlue = new CbColorBlock("PurpleBlue", PinkTab, 0, 0, 0, 15);
+    		CbWhitePurple = new CbColorBlock("WhitePurple", PinkTab, 0, 0, 0, 15);
+    		CbDarkPurple = new CbColorBlock("DarkPurple", PinkTab, 0, 0, 0, 15);
+    		CbLavender = new CbColorBlock("Lavender", PinkTab, 0, 0, 0, 15);
+    		CbLightLavender = new CbColorBlock("LightLavender", PinkTab, 0, 0, 0, 15);
+
     		
     		//RedTab
-    		CbOrange = new CbColorBlock("Orange", RedTab);
-    		CbRed = new CbColorBlock("Red", RedTab);
-    		CbWineRed = new CbColorBlock("WineRed", RedTab);
-    		CbRedOrange = new CbColorBlock("RedOrange", RedTab);
-    		CbLightOrange = new CbColorBlock("LightOrange", RedTab);
-    		CbLightOrangeRed = new CbColorBlock("LightOrangeRed", RedTab);
+    		CbOrange = new CbColorBlock("Orange", RedTab, 0, 0, 0, 15);
+    		CbRed = new CbColorBlock("Red", RedTab, 15, 0, 0, 15);
+    		CbWineRed = new CbColorBlock("WineRed", RedTab, 0, 0, 0, 15);
+    		CbRedOrange = new CbColorBlock("RedOrange", RedTab, 0, 0, 0, 15);
+    		CbLightOrange = new CbColorBlock("LightOrange", RedTab, 0, 0, 0, 15);
+    		CbLightOrangeRed = new CbColorBlock("LightOrangeRed", RedTab, 0, 0, 0, 15);
     		
     		//YellowTab
-    		CbYellow = new CbColorBlock("Yellow", YellowTab);
-    		CbLightYellow = new CbColorBlock("LightYellow", YellowTab);
-    		CbDarkYellow = new CbColorBlock("DarkYellow", YellowTab);
+    		CbYellow = new CbColorBlock("Yellow", YellowTab, 0, 0, 0, 15);
+    		CbLightYellow = new CbColorBlock("LightYellow", YellowTab, 0, 0, 0, 15);
+    		CbDarkYellow = new CbColorBlock("DarkYellow", YellowTab, 0, 0, 0, 15);
     		
         	//Defines Half Slabs in Minecraft
     		    		
@@ -397,6 +377,7 @@ public class ColorBlocks {
     		CbCyanHalfSlab = new CbColorSlab(false, null, "Cyan", 0);
     		CbLightCyanHalfSlab = new CbColorSlab(false, null, "LightCyan", 0);
     		CbBlueishWhiteHalfSlab = new CbColorSlab(false, null, "BlueishWhite", 0);
+    		CbNavyBlueHalfSlab = new CbColorSlab(false, null, "NavyBlue", 0);
 
     		//GreenTab
     		CbGreenHalfSlab = new CbColorSlab(false, null, "Green", 3);
@@ -423,6 +404,9 @@ public class ColorBlocks {
     		CbPurpleBlueHalfSlab = new CbColorSlab(false, null, "PurpleBlue", 4);
     		CbWhitePurpleHalfSlab = new CbColorSlab(false, null, "WhitePurple", 4);
     		CbDarkPurpleHalfSlab = new CbColorSlab(false, null, "DarkPurple", 4);
+    		CbLavenderHalfSlab = new CbColorSlab(false, null, "Lavender", 4);
+    		CbLightLavenderHalfSlab = new CbColorSlab(false, null, "LightLavender", 4);
+
     		
     		//RedTab
     		CbOrangeHalfSlab = new CbColorSlab(false, null, "Orange", 6);
@@ -454,6 +438,7 @@ public class ColorBlocks {
     		CbCyanFullSlab = new CbColorSlab(true, null, "Cyan", 7);
     		CbLightCyanFullSlab = new CbColorSlab(true, null, "LightCyan", 7);
     		CbBlueishWhiteFullSlab = new CbColorSlab(true, null, "BlueishWhite", 7);
+    		CbNavyBlueFullSlab = new CbColorSlab(true, null, "NavyBlue", 7);
 
     		//GreenTab
     		CbGreenFullSlab = new CbColorSlab(true, null, "Green", 7);
@@ -480,6 +465,9 @@ public class ColorBlocks {
     		CbPurpleBlueFullSlab = new CbColorSlab(true, null, "PurpleBlue", 7);
     		CbWhitePurpleFullSlab = new CbColorSlab(true, null, "WhitePurple", 7);
     		CbDarkPurpleFullSlab = new CbColorSlab(true, null, "DarkPurple", 7);
+    		CbLavenderFullSlab = new CbColorSlab(true, null, "Lavender", 7);
+    		CbLightLavenderFullSlab = new CbColorSlab(true, null, "LightLavender", 7);
+
     		
     		//RedTab
     		CbOrangeFullSlab = new CbColorSlab(true, null, "Orange", 7);
@@ -511,6 +499,7 @@ public class ColorBlocks {
     		CbCyanStair = new CbColorStair(CbCyan, 0, "Cyan", 0);
     		CbLightCyanStair = new CbColorStair(CbLightCyan, 0, "LightCyan", 0);
     		CbBlueishWhiteStair = new CbColorStair(CbBlueishWhite, 0, "BlueishWhite", 0);
+    		CbNavyBlueStair = new CbColorStair(CbNavyBlue, 0, "NavyBlue", 0);
 
     		//GreenTab
     		CbGreenStair = new CbColorStair(CbGreen, 0, "Green", 3);
@@ -537,6 +526,10 @@ public class ColorBlocks {
     		CbPurpleBlueStair = new CbColorStair(CbPurpleBlue, 0, "PurpleBlue", 4);
     		CbWhitePurpleStair = new CbColorStair(CbWhitePurple, 0, "WhitePurple", 4);
     		CbDarkPurpleStair = new CbColorStair(CbDarkPurple, 0, "DarkPurple", 4);
+    		CbLavenderStair = new CbColorStair(CbLavender, 0, "Lavender", 4);
+    		CbLightLavenderStair = new CbColorStair(CbLightLavender, 0, "LightLavender", 4);
+
+
     		
     		//RedTab
     		CbOrangeStair = new CbColorStair(CbOrange, 0, "Orange", 6);
@@ -555,184 +548,9 @@ public class ColorBlocks {
     		//Defines items in minecraft
     		CbWhiteDust = new CbColorItem().setUnlocalizedName("WhiteDust").setCreativeTab(ItemTab).setTextureName(modid + ":" + "WhiteDust");
     		CbWhiteIngot = new CbColorItem().setUnlocalizedName("WhiteIngot").setCreativeTab(ItemTab).setTextureName(modid + ":" + "WhiteIngot");
-
-    	
-        	
-        	//Registers the blocks in minecraft
-    		GameRegistry.registerBlock(CbBlack, "Black");
-    		GameRegistry.registerBlock(CbBlue, "Blue");
-    		GameRegistry.registerBlock(CbBrown, "Brown");
-    		GameRegistry.registerBlock(CbCyan, "Cyan");
-    		GameRegistry.registerBlock(CbDarkGreen, "DarkGreen"); 		
-    		GameRegistry.registerBlock(CbGreen, "Green");
-    		GameRegistry.registerBlock(CbGrey, "Grey");
-    		GameRegistry.registerBlock(CbLightBlue, "LightBlue");
-    		GameRegistry.registerBlock(CbLightBrown, "LightBrown");
-    		GameRegistry.registerBlock(CbLightGrey, "LightGrey");
-    		GameRegistry.registerBlock(CbLightPurple, "LightPurple");
-    		GameRegistry.registerBlock(CbLimeGreen, "LimeGreen");
-    		GameRegistry.registerBlock(CbMagenta, "Magenta");
-    		GameRegistry.registerBlock(CbOrange, "Orange");
-    		GameRegistry.registerBlock(CbPink, "Pink");
-    		GameRegistry.registerBlock(CbPurple, "Purple");
-    		GameRegistry.registerBlock(CbRed, "Red");
-    		GameRegistry.registerBlock(CbWhite, "White");
-    		GameRegistry.registerBlock(CbWineRed, "WineRed");
-    		GameRegistry.registerBlock(CbYellow, "Yellow");
-    		GameRegistry.registerBlock(CbRedOrange, "RedOrange");
-    		GameRegistry.registerBlock(CbLightOrange, "LightOrange");
-    		GameRegistry.registerBlock(CbWhitePink, "WhitePink");
-    		GameRegistry.registerBlock(CbSharpPink, "SharpPink");
-    		GameRegistry.registerBlock(CbLightPurpleBlue, "LightPurpleBlue");
-    		GameRegistry.registerBlock(CbPurpleBlue, "PurpleBlue");
-    		GameRegistry.registerBlock(CbBlueishWhite, "BlueishWhite");
-    		GameRegistry.registerBlock(CbLightCyan, "LightCyan");
-    		GameRegistry.registerBlock(CbGreenishCyan, "GreenishCyan");
-    		GameRegistry.registerBlock(CbYellowishGreen, "YellowishGreen");
-    		GameRegistry.registerBlock(CbLightYellow, "LightYellow");
-    		GameRegistry.registerBlock(CbLightOrangeRed, "LightOrangeRed");
-    		GameRegistry.registerBlock(CbWhitePurple, "WhitePurple");
-    		GameRegistry.registerBlock(CbDarkYellow, "DarkYellow");
-    		GameRegistry.registerBlock(CbDarkCyan, "DarkCyan");
-    		GameRegistry.registerBlock(CbDarkPurple, "DarkPurple");
-    		GameRegistry.registerBlock(CbDarkBlueishCyan, "DarkBlueishCyan");
-    		GameRegistry.registerBlock(CbDarkBrownishRed, "DarkBrownishRed");
-    		GameRegistry.registerBlock(CbDarkCyanishGreen, "DarkCyanishGreen"); 
-    		GameRegistry.registerBlock(CbDarkBlue, "DarkBlue"); 
-    		GameRegistry.registerBlock(CbDarkGrey, "DarkGrey"); 
-    		
-    		//Register HalfSlabs
-    		GameRegistry.registerBlock(CbBlackHalfSlab, CbBlackSlabItem.class,  "BlackHalfSlab");
-    		GameRegistry.registerBlock(CbBlueHalfSlab, CbBlueSlabItem.class, "BlueHalfSlab");
-    		GameRegistry.registerBlock(CbBrownHalfSlab, CbBrownSlabItem.class, "BrownHalfSlab");
-    		GameRegistry.registerBlock(CbCyanHalfSlab, CbCyanSlabItem.class, "CyanHalfSlab");
-    		GameRegistry.registerBlock(CbDarkGreenHalfSlab, CbDarkGreenSlabItem.class, "DarkGreenHalfSlab"); 		
-    		GameRegistry.registerBlock(CbGreenHalfSlab, CbGreenSlabItem.class, "GreenHalfSlab");
-    		GameRegistry.registerBlock(CbGreyHalfSlab, CbGreySlabItem.class, "GreyHalfSlab");
-    		GameRegistry.registerBlock(CbLightBlueHalfSlab, CbLightBlueSlabItem.class, "LightBlueHalfSlab");
-    		GameRegistry.registerBlock(CbLightBrownHalfSlab, CbLightBrownSlabItem.class, "LightBrownHalfSlab");
-    		GameRegistry.registerBlock(CbLightGreyHalfSlab, CbLightGreySlabItem.class, "LightGreyHalfSlab");
-    		GameRegistry.registerBlock(CbLightPurpleHalfSlab, CbLightPurpleSlabItem.class, "LightPurpleHalfSlab");
-    		GameRegistry.registerBlock(CbLimeGreenHalfSlab, CbLimeGreenSlabItem.class, "LimeGreenHalfSlab");
-    		GameRegistry.registerBlock(CbMagentaHalfSlab, CbMagentaSlabItem.class, "MagentaHalfSlab");
-    		GameRegistry.registerBlock(CbOrangeHalfSlab, CbOrangeSlabItem.class, "OrangeHalfSlab");
-    		GameRegistry.registerBlock(CbPinkHalfSlab, CbPinkSlabItem.class, "PinkHalfSlab");
-    		GameRegistry.registerBlock(CbPurpleHalfSlab, CbPurpleSlabItem.class, "PurpleHalfSlab");
-    		GameRegistry.registerBlock(CbRedHalfSlab, CbRedSlabItem.class, "RedHalfSlab");
-    		GameRegistry.registerBlock(CbWhiteHalfSlab, CbWhiteSlabItem.class, "WhiteHalfSlab");
-    		GameRegistry.registerBlock(CbWineRedHalfSlab, CbWineRedSlabItem.class, "WineRedHalfSlab");
-    		GameRegistry.registerBlock(CbYellowHalfSlab, CbYellowSlabItem.class, "YellowHalfSlab");
-    		GameRegistry.registerBlock(CbRedOrangeHalfSlab, CbRedOrangeSlabItem.class, "RedOrangeHalfSlab");
-    		GameRegistry.registerBlock(CbLightOrangeHalfSlab, CbLightOrangeSlabItem.class, "LightOrangeHalfSlab");
-    		GameRegistry.registerBlock(CbWhitePinkHalfSlab, CbWhitePinkSlabItem.class, "WhitePinkHalfSlab");
-    		GameRegistry.registerBlock(CbSharpPinkHalfSlab, CbSharpPinkSlabItem.class, "SharpPinkHalfSlab");
-    		GameRegistry.registerBlock(CbLightPurpleBlueHalfSlab, CbLightPurpleBlueSlabItem.class, "LightPurpleBlueHalfSlab");
-    		GameRegistry.registerBlock(CbPurpleBlueHalfSlab, CbPurpleBlueSlabItem.class, "PurpleBlueHalfSlab");
-    		GameRegistry.registerBlock(CbBlueishWhiteHalfSlab, CbBlueishWhiteSlabItem.class, "BlueishWhiteHalfSlab");
-    		GameRegistry.registerBlock(CbLightCyanHalfSlab, CbLightCyanSlabItem.class, "LightCyanHalfSlab");
-    		GameRegistry.registerBlock(CbGreenishCyanHalfSlab, CbGreenishCyanSlabItem.class, "GreenishCyanHalfSlab");
-    		GameRegistry.registerBlock(CbYellowishGreenHalfSlab, CbYellowishGreenSlabItem.class, "YellowishGreenHalfSlab");
-    		GameRegistry.registerBlock(CbLightYellowHalfSlab, CbLightYellowSlabItem.class, "LightYellowHalfSlab");
-    		GameRegistry.registerBlock(CbLightOrangeRedHalfSlab, CbLightOrangeRedSlabItem.class, "LightOrangeRedHalfSlab");
-    		GameRegistry.registerBlock(CbWhitePurpleHalfSlab, CbWhitePurpleSlabItem.class, "WhitePurpleHalfSlab");
-    		GameRegistry.registerBlock(CbDarkYellowHalfSlab, CbDarkYellowSlabItem.class, "DarkYellowHalfSlab");
-    		GameRegistry.registerBlock(CbDarkCyanHalfSlab, CbDarkCyanSlabItem.class, "DarkCyanHalfSlab");
-    		GameRegistry.registerBlock(CbDarkPurpleHalfSlab, CbDarkPurpleSlabItem.class, "DarkPurpleHalfSlab");
-    		GameRegistry.registerBlock(CbDarkBlueishCyanHalfSlab, CbDarkBlueishCyanSlabItem.class, "DarkBlueishCyanHalfSlab");
-    		GameRegistry.registerBlock(CbDarkBrownishRedHalfSlab, CbDarkBrownishRedSlabItem.class, "DarkBrownishRedHalfSlab");
-    		GameRegistry.registerBlock(CbDarkCyanishGreenHalfSlab, CbDarkCyanishGreenSlabItem.class, "DarkCyanishGreenHalfSlab"); 
-    		GameRegistry.registerBlock(CbDarkBlueHalfSlab, CbDarkBlueSlabItem.class, "DarkBlueHalfSlab"); 
-    		GameRegistry.registerBlock(CbDarkGreyHalfSlab, CbDarkGreySlabItem.class, "DarkGreyHalfSlab"); 
-    		//Double slabs
-    		GameRegistry.registerBlock(CbBlackFullSlab, CbBlackSlabItem.class, "BlackFullSlab");
-    		GameRegistry.registerBlock(CbBlueFullSlab, CbBlueSlabItem.class, "BlueFullSlab");
-    		GameRegistry.registerBlock(CbBrownFullSlab, CbBrownSlabItem.class, "BrownFullSlab");
-    		GameRegistry.registerBlock(CbCyanFullSlab, CbCyanSlabItem.class, "CyanFullSlab");
-    		GameRegistry.registerBlock(CbDarkGreenFullSlab, CbDarkGreenSlabItem.class, "DarkGreenFullSlab"); 		
-    		GameRegistry.registerBlock(CbGreenFullSlab, CbGreenSlabItem.class, "GreenFullSlab");
-    		GameRegistry.registerBlock(CbGreyFullSlab, CbGreySlabItem.class, "GreyFullSlab");
-    		GameRegistry.registerBlock(CbLightBlueFullSlab, CbLightBlueSlabItem.class, "LightBlueFullSlab");
-    		GameRegistry.registerBlock(CbLightBrownFullSlab, CbLightBrownSlabItem.class, "LightBrownFullSlab");
-    		GameRegistry.registerBlock(CbLightGreyFullSlab, CbLightGreySlabItem.class, "LightGreyFullSlab");
-    		GameRegistry.registerBlock(CbLightPurpleFullSlab, CbLightPurpleSlabItem.class, "LightPurpleFullSlab");
-    		GameRegistry.registerBlock(CbLimeGreenFullSlab, CbLimeGreenSlabItem.class, "LimeGreenFullSlab");
-    		GameRegistry.registerBlock(CbMagentaFullSlab, CbMagentaSlabItem.class, "MagentaFullSlab");
-    		GameRegistry.registerBlock(CbOrangeFullSlab, CbOrangeSlabItem.class, "OrangeFullSlab");
-    		GameRegistry.registerBlock(CbPinkFullSlab, CbPinkSlabItem.class, "PinkFullSlab");
-    		GameRegistry.registerBlock(CbPurpleFullSlab, CbPurpleSlabItem.class, "PurpleFullSlab");
-    		GameRegistry.registerBlock(CbRedFullSlab, CbRedSlabItem.class, "RedFullSlab");
-    		GameRegistry.registerBlock(CbWhiteFullSlab, CbWhiteSlabItem.class, "WhiteFullSlab");
-    		GameRegistry.registerBlock(CbWineRedFullSlab, CbWineRedSlabItem.class, "WineRedFullSlab");
-    		GameRegistry.registerBlock(CbYellowFullSlab, CbYellowSlabItem.class, "YellowFullSlab");
-    		GameRegistry.registerBlock(CbRedOrangeFullSlab, CbRedOrangeSlabItem.class, "RedOrangeFullSlab");
-    		GameRegistry.registerBlock(CbLightOrangeFullSlab, CbLightOrangeSlabItem.class, "LightOrangeFullSlab");
-    		GameRegistry.registerBlock(CbWhitePinkFullSlab, CbWhitePinkSlabItem.class, "WhitePinkFullSlab");
-    		GameRegistry.registerBlock(CbSharpPinkFullSlab, CbSharpPinkSlabItem.class, "SharpPinkFullSlab");
-    		GameRegistry.registerBlock(CbLightPurpleBlueFullSlab, CbLightPurpleBlueSlabItem.class, "LightPurpleBlueFullSlab");
-    		GameRegistry.registerBlock(CbPurpleBlueFullSlab, CbPurpleBlueSlabItem.class, "PurpleBlueFullSlab");
-    		GameRegistry.registerBlock(CbBlueishWhiteFullSlab, CbBlueishWhiteSlabItem.class, "BlueishWhiteFullSlab");
-    		GameRegistry.registerBlock(CbLightCyanFullSlab, CbLightCyanSlabItem.class, "LightCyanFullSlab");
-    		GameRegistry.registerBlock(CbGreenishCyanFullSlab, CbGreenishCyanSlabItem.class, "GreenishCyanFullSlab");
-    		GameRegistry.registerBlock(CbYellowishGreenFullSlab, CbYellowishGreenSlabItem.class, "YellowishGreenFullSlab");
-    		GameRegistry.registerBlock(CbLightYellowFullSlab, CbLightYellowSlabItem.class, "LightYellowFullSlab");
-    		GameRegistry.registerBlock(CbLightOrangeRedFullSlab, CbLightOrangeRedSlabItem.class, "LightOrangeRedFullSlab");
-    		GameRegistry.registerBlock(CbWhitePurpleFullSlab, CbWhitePurpleSlabItem.class, "WhitePurpleFullSlab");
-    		GameRegistry.registerBlock(CbDarkYellowFullSlab, CbDarkYellowSlabItem.class, "DarkYellowFullSlab");
-    		GameRegistry.registerBlock(CbDarkCyanFullSlab, CbDarkCyanSlabItem.class, "DarkCyanFullSlab");
-    		GameRegistry.registerBlock(CbDarkPurpleFullSlab, CbDarkPurpleSlabItem.class, "DarkPurpleFullSlab");
-    		GameRegistry.registerBlock(CbDarkBlueishCyanFullSlab, CbDarkBlueishCyanSlabItem.class, "DarkBlueishCyanFullSlab");
-    		GameRegistry.registerBlock(CbDarkBrownishRedFullSlab, CbDarkBrownishRedSlabItem.class, "DarkBrownishRedFullSlab");
-    		GameRegistry.registerBlock(CbDarkCyanishGreenFullSlab, CbDarkCyanishGreenSlabItem.class, "DarkCyanishGreenFullSlab"); 
-    		GameRegistry.registerBlock(CbDarkBlueFullSlab, CbDarkBlueSlabItem.class, "DarkBlueFullSlab"); 
-    		GameRegistry.registerBlock(CbDarkGreyFullSlab, CbDarkGreySlabItem.class, "DarkGreyFullSlab");
-    		
-    		//Register Stairs
-    		GameRegistry.registerBlock(CbBlackStair, "BlackStair");
-    		GameRegistry.registerBlock(CbBlueStair, "BlueStair");
-    		GameRegistry.registerBlock(CbBrownStair, "BrownStair");
-    		GameRegistry.registerBlock(CbCyanStair, "CyanStair");
-    		GameRegistry.registerBlock(CbDarkGreenStair, "DarkGreenStair"); 		
-    		GameRegistry.registerBlock(CbGreenStair, "GreenStair");
-    		GameRegistry.registerBlock(CbGreyStair, "GreyStair");
-    		GameRegistry.registerBlock(CbLightBlueStair, "LightBlueStair");
-    		GameRegistry.registerBlock(CbLightBrownStair, "LightBrownStair");
-    		GameRegistry.registerBlock(CbLightGreyStair, "LightGreyStair");
-    		GameRegistry.registerBlock(CbLightPurpleStair, "LightPurpleStair");
-    		GameRegistry.registerBlock(CbLimeGreenStair, "LimeGreenStair");
-    		GameRegistry.registerBlock(CbMagentaStair, "MagentaStair");
-    		GameRegistry.registerBlock(CbOrangeStair, "OrangeStair");
-    		GameRegistry.registerBlock(CbPinkStair, "PinkStair");
-    		GameRegistry.registerBlock(CbPurpleStair, "PurpleStair");
-    		GameRegistry.registerBlock(CbRedStair, "RedStair");
-    		GameRegistry.registerBlock(CbWhiteStair, "WhiteStair");
-    		GameRegistry.registerBlock(CbWineRedStair, "WineRedStair");
-    		GameRegistry.registerBlock(CbYellowStair, "YellowStair");
-    		GameRegistry.registerBlock(CbRedOrangeStair, "RedOrangeStair");
-    		GameRegistry.registerBlock(CbLightOrangeStair, "LightOrangeStair");
-    		GameRegistry.registerBlock(CbWhitePinkStair, "WhitePinkStair");
-    		GameRegistry.registerBlock(CbSharpPinkStair, "SharpPinkStair");
-    		GameRegistry.registerBlock(CbLightPurpleBlueStair, "LightPurpleBlueStair");
-    		GameRegistry.registerBlock(CbPurpleBlueStair, "PurpleBlueStair");
-    		GameRegistry.registerBlock(CbBlueishWhiteStair, "BlueishWhiteStair");
-    		GameRegistry.registerBlock(CbLightCyanStair, "LightCyanStair");
-    		GameRegistry.registerBlock(CbGreenishCyanStair, "GreenishCyanStair");
-    		GameRegistry.registerBlock(CbYellowishGreenStair, "YellowishGreenStair");
-    		GameRegistry.registerBlock(CbLightYellowStair, "LightYellowStair");
-    		GameRegistry.registerBlock(CbLightOrangeRedStair, "LightOrangeRedStair");
-    		GameRegistry.registerBlock(CbWhitePurpleStair, "WhitePurpleStair");
-    		GameRegistry.registerBlock(CbDarkYellowStair, "DarkYellowStair");
-    		GameRegistry.registerBlock(CbDarkCyanStair, "DarkCyanStair");
-    		GameRegistry.registerBlock(CbDarkPurpleStair, "DarkPurpleStair");
-    		GameRegistry.registerBlock(CbDarkBlueishCyanStair, "DarkBlueishCyanStair");
-    		GameRegistry.registerBlock(CbDarkBrownishRedStair, "DarkBrownishRedStair");
-    		GameRegistry.registerBlock(CbDarkCyanishGreenStair, "DarkCyanishGreenStair"); 
-    		GameRegistry.registerBlock(CbDarkBlueStair, "DarkBlueStair"); 
-    		GameRegistry.registerBlock(CbDarkGreyStair, "DarkGreyStair"); 
-        		
-        		//Registers items in Minecraft
-    		GameRegistry.registerItem(CbWhiteDust, "WhiteDust"); 
-    		GameRegistry.registerItem(CbWhiteIngot, "WhiteIngot"); 
     			
+    		
+    		ColorRegistrations.addRegistrations(this);
     		//Smelting Recipes
     			GameRegistry.addSmelting(CbWhiteDust, new ItemStack(CbWhiteIngot, 2), 0.1F);
 
