@@ -34,7 +34,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
-@Mod(modid="colorblocks", name="Color Blocks", version="1.4")
+@Mod(modid="colorblocks", name="Color Blocks", version="1.5")
 public class ColorBlocks {
 
 	//modid = ColorBlocks
@@ -42,7 +42,7 @@ public class ColorBlocks {
 	
 	
         // The instance of your mod that Forge uses.
-        @Instance("ColorBlocks")
+        @Instance("colorblocks")
         public static ColorBlocks instance;
        
         //Color Blocks     
@@ -301,64 +301,64 @@ public class ColorBlocks {
         	//Defines Blocks in Minecraft
         	
         	//GrayTab
-        	CbBlack = new CbColorBlock("Black", GrayTab, 0, 0, 0, 0);
-    		CbGrey = new CbColorBlock("Grey", GrayTab, 0, 0, 0, 15);
-    		CbLightGrey = new CbColorBlock("LightGrey", GrayTab, 0, 0, 0, 15);
-    		CbWhite = new CbColorBlock("White", GrayTab, 15, 15, 15, 15);
-    		CbDarkGrey = new CbColorBlock("DarkGrey", GrayTab, 4, 4, 4, 4);
+        	CbBlack = new CbColorBlock("Black", GrayTab, 0);
+    		CbGrey = new CbColorBlock("Grey", GrayTab, 0);
+    		CbLightGrey = new CbColorBlock("LightGrey", GrayTab, 0);
+    		CbWhite = new CbColorBlock("White", GrayTab, 15);
+    		CbDarkGrey = new CbColorBlock("DarkGrey", GrayTab, 4);
 
     		//BlueTab
-    		CbBlue = new CbColorBlock("Blue", BlueTab, 0, 0, 15, 15);
-    		CbLightBlue = new CbColorBlock("LightBlue", BlueTab, 12, 14, 15, 15);
-    		CbDarkBlueishCyan = new CbColorBlock("DarkBlueishCyan", BlueTab, 5, 10, 12, 12);
-    		CbDarkBlue = new CbColorBlock("DarkBlue", BlueTab, 0, 6, 10, 10);
-    		CbCyan = new CbColorBlock("Cyan", BlueTab, 7, 14, 15, 15);
-    		CbLightCyan = new CbColorBlock("LightCyan", BlueTab, 0, 0, 0, 15);
-    		CbBlueishWhite = new CbColorBlock("BlueishWhite", BlueTab, 0, 0, 0, 15);
-    		CbNavyBlue = new CbColorBlock("NavyBlue", BlueTab, 0, 0, 0, 15);
+    		CbBlue = new CbColorBlock("Blue", BlueTab, 0);
+    		CbLightBlue = new CbColorBlock("LightBlue", BlueTab, 12);
+    		CbDarkBlueishCyan = new CbColorBlock("DarkBlueishCyan", BlueTab, 5);
+    		CbDarkBlue = new CbColorBlock("DarkBlue", BlueTab, 0);
+    		CbCyan = new CbColorBlock("Cyan", BlueTab, 7);
+    		CbLightCyan = new CbColorBlock("LightCyan", BlueTab, 0);
+    		CbBlueishWhite = new CbColorBlock("BlueishWhite", BlueTab, 0);
+    		CbNavyBlue = new CbColorBlock("NavyBlue", BlueTab, 0);
 
 
     		//GreenTab
-    		CbGreen = new CbColorBlock("Green", GreenTab, 0, 15, 0, 15);
-    		CbDarkGreen = new CbColorBlock("DarkGreen", GreenTab, 0, 0, 0, 15);
-    		CbLimeGreen = new CbColorBlock("LimeGreen", GreenTab, 0, 0, 0, 15);
-    		CbGreenishCyan = new CbColorBlock("GreenishCyan", GreenTab, 0, 0, 0, 15);
-    		CbYellowishGreen = new CbColorBlock("YellowishGreen", GreenTab, 0, 0, 0, 15);
-    		CbDarkCyanishGreen = new CbColorBlock("DarkCyanishGreen", GreenTab, 0, 0, 0, 15);
-    		CbDarkCyan = new CbColorBlock("DarkCyan", GreenTab, 0, 0, 0, 15);
+    		CbGreen = new CbColorBlock("Green", GreenTab, 0);
+    		CbDarkGreen = new CbColorBlock("DarkGreen", GreenTab, 0);
+    		CbLimeGreen = new CbColorBlock("LimeGreen", GreenTab, 0);
+    		CbGreenishCyan = new CbColorBlock("GreenishCyan", GreenTab, 0);
+    		CbYellowishGreen = new CbColorBlock("YellowishGreen", GreenTab, 0);
+    		CbDarkCyanishGreen = new CbColorBlock("DarkCyanishGreen", GreenTab, 0);
+    		CbDarkCyan = new CbColorBlock("DarkCyan", GreenTab, 0);
     		
     		//BrownTab
-    		CbBrown = new CbColorBlock("Brown", BrownTab, 0, 0, 0, 15);
-    		CbLightBrown = new CbColorBlock("LightBrown", BrownTab, 0, 0, 0, 15);
-    		CbDarkBrownishRed = new CbColorBlock("DarkBrownishRed", BrownTab, 0, 0, 0, 15);
+    		CbBrown = new CbColorBlock("Brown", BrownTab, 0);
+    		CbLightBrown = new CbColorBlock("LightBrown", BrownTab, 0);
+    		CbDarkBrownishRed = new CbColorBlock("DarkBrownishRed", BrownTab, 0);
 
     		//PinkTab
-			CbLightPurple = new CbColorBlock("LightPurple", PinkTab, 0, 0, 0, 15);
-    		CbMagenta = new CbColorBlock("Magenta", PinkTab, 0, 0, 0, 15);
-    		CbPink = new CbColorBlock("Pink", PinkTab, 0, 0, 0, 15);
-    		CbPurple = new CbColorBlock("Purple", PinkTab, 0, 0, 0, 15);
-    		CbWhitePink = new CbColorBlock("WhitePink", PinkTab, 0, 0, 0, 15);
-    		CbSharpPink = new CbColorBlock("SharpPink", PinkTab, 0, 0, 0, 15);
-    		CbLightPurpleBlue = new CbColorBlock("LightPurpleBlue", PinkTab, 0, 0, 0, 15);
-    		CbPurpleBlue = new CbColorBlock("PurpleBlue", PinkTab, 0, 0, 0, 15);
-    		CbWhitePurple = new CbColorBlock("WhitePurple", PinkTab, 0, 0, 0, 15);
-    		CbDarkPurple = new CbColorBlock("DarkPurple", PinkTab, 0, 0, 0, 15);
-    		CbLavender = new CbColorBlock("Lavender", PinkTab, 0, 0, 0, 15);
-    		CbLightLavender = new CbColorBlock("LightLavender", PinkTab, 0, 0, 0, 15);
+			CbLightPurple = new CbColorBlock("LightPurple", PinkTab, 0);
+    		CbMagenta = new CbColorBlock("Magenta", PinkTab, 0);
+    		CbPink = new CbColorBlock("Pink", PinkTab, 0);
+    		CbPurple = new CbColorBlock("Purple", PinkTab, 0);
+    		CbWhitePink = new CbColorBlock("WhitePink", PinkTab, 0);
+    		CbSharpPink = new CbColorBlock("SharpPink", PinkTab, 0);
+    		CbLightPurpleBlue = new CbColorBlock("LightPurpleBlue", PinkTab, 0);
+    		CbPurpleBlue = new CbColorBlock("PurpleBlue", PinkTab, 0);
+    		CbWhitePurple = new CbColorBlock("WhitePurple", PinkTab, 0);
+    		CbDarkPurple = new CbColorBlock("DarkPurple", PinkTab, 0);
+    		CbLavender = new CbColorBlock("Lavender", PinkTab, 0);
+    		CbLightLavender = new CbColorBlock("LightLavender", PinkTab, 0);
 
     		
     		//RedTab
-    		CbOrange = new CbColorBlock("Orange", RedTab, 0, 0, 0, 15);
-    		CbRed = new CbColorBlock("Red", RedTab, 15, 0, 0, 15);
-    		CbWineRed = new CbColorBlock("WineRed", RedTab, 0, 0, 0, 15);
-    		CbRedOrange = new CbColorBlock("RedOrange", RedTab, 0, 0, 0, 15);
-    		CbLightOrange = new CbColorBlock("LightOrange", RedTab, 0, 0, 0, 15);
-    		CbLightOrangeRed = new CbColorBlock("LightOrangeRed", RedTab, 0, 0, 0, 15);
+    		CbOrange = new CbColorBlock("Orange", RedTab, 0);
+    		CbRed = new CbColorBlock("Red", RedTab, 15);
+    		CbWineRed = new CbColorBlock("WineRed", RedTab, 0);
+    		CbRedOrange = new CbColorBlock("RedOrange", RedTab, 0);
+    		CbLightOrange = new CbColorBlock("LightOrange", RedTab, 0);
+    		CbLightOrangeRed = new CbColorBlock("LightOrangeRed", RedTab, 0);
     		
     		//YellowTab
-    		CbYellow = new CbColorBlock("Yellow", YellowTab, 0, 0, 0, 15);
-    		CbLightYellow = new CbColorBlock("LightYellow", YellowTab, 0, 0, 0, 15);
-    		CbDarkYellow = new CbColorBlock("DarkYellow", YellowTab, 0, 0, 0, 15);
+    		CbYellow = new CbColorBlock("Yellow", YellowTab, 0);
+    		CbLightYellow = new CbColorBlock("LightYellow", YellowTab, 0);
+    		CbDarkYellow = new CbColorBlock("DarkYellow", YellowTab, 0);
     		
         	//Defines Half Slabs in Minecraft
     		    		
@@ -556,7 +556,6 @@ public class ColorBlocks {
 
     		
         	//Crafting Recipes
-
         	GameRegistry.addShapedRecipe(new ItemStack(CbWhiteDust, 32), new Object[] { "IOI", "OGO", "IOI", 'I', Items.iron_ingot, 'O', Blocks.obsidian, 'G', Blocks.glowstone });
         	GameRegistry.addShapedRecipe(new ItemStack(CbWhite, 4), new Object[] { "WW", "WW", 'W', CbWhiteIngot});
         	GameRegistry.addShapelessRecipe(new ItemStack(CbBlack, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 0)  });

@@ -17,9 +17,10 @@ public class CbColorSlab extends BlockSlab{
 
 	static ColorBlocks Color = new ColorBlocks();
 	static String string1 = new String();
-	
+	private static boolean isFull;
 	public CbColorSlab(boolean fullBlock, Material mat, String string,int tab) {
 		super(fullBlock, Material.wood);
+		isFull = fullBlock;
 		string1 = string;
 		this.setBlockTextureName(Color.modid + ":" + string);
 		this.setBlockName("Cb" + string + "Slab");
@@ -46,7 +47,20 @@ public class CbColorSlab extends BlockSlab{
 		
 	}
 
-
+    public int quantityDropped(Random p_149745_1_)
+    {
+    	if(this.isFull == true){
+    		return 2;
+    	}else
+    		return 1;
+    }
+    
+/*  WIP using KeeperAPI in future!
+ *   public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
+    {
+        return Item.getItemFromBlock(KeeperAPI.getHalfSlab());
+    }
+	*/
 	 @SideOnly(Side.CLIENT)
 	    private static boolean func_150003_a(Block block)
 	    {
