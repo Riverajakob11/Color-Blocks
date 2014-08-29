@@ -551,29 +551,7 @@ public class ColorBlocks {
     			
     		
     		ColorRegistrations.addRegistrations(this);
-    		//Smelting Recipes
-    			GameRegistry.addSmelting(CbWhiteDust, new ItemStack(CbWhiteIngot, 2), 0.1F);
-
     		
-        	//Crafting Recipes
-        	GameRegistry.addShapedRecipe(new ItemStack(CbWhiteDust, 32), new Object[] { "IOI", "OGO", "IOI", 'I', Items.iron_ingot, 'O', Blocks.obsidian, 'G', Blocks.glowstone });
-        	GameRegistry.addShapedRecipe(new ItemStack(CbWhite, 4), new Object[] { "WW", "WW", 'W', CbWhiteIngot});
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbBlack, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 0)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbRed, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 1)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbGreen, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 2)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbBrown, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 3)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbBlue, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 4)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbPurple, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 5)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbCyan, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 6)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbLightGrey, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 7)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbGrey, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 8)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbPink, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 9)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbLimeGreen, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 10)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbYellow, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 11)  });
-       		GameRegistry.addShapelessRecipe(new ItemStack(CbLightBlue, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 12)  });
-       		GameRegistry.addShapelessRecipe(new ItemStack(CbMagenta, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 13)  });
-        	GameRegistry.addShapelessRecipe(new ItemStack(CbOrange, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 14)  });
-	
         }
         
 
