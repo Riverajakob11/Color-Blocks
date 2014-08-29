@@ -216,6 +216,9 @@ public class ColorRegistrations {
        		GameRegistry.addShapelessRecipe(new ItemStack(CbLightBlue, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 12)  });
        		GameRegistry.addShapelessRecipe(new ItemStack(CbMagenta, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 13)  });
         	GameRegistry.addShapelessRecipe(new ItemStack(CbOrange, 1), new Object[] { CbWhite, new ItemStack(Items.dye, 0, 14)  });
+        	
+                // Registers smelting recipes in Minecraft
+    		GameRegistry.addSmelting(CbWhiteDust, new ItemStack(CbWhiteIngot, 2), 0.1F);
 	}
 	
 }
